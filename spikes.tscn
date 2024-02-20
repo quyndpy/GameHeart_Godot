@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://t6mymuvxb4ly"]
+
+[ext_resource type="Texture2D" uid="uid://o4xgyp2000jx" path="res://spikes.png" id="1_utuxg"]
+[ext_resource type="PackedScene" uid="uid://drkrn6kw5f6on" path="res://hazzar_area.tscn" id="2_f6vfj"]
+
+[node name="Spikes" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(8, -8)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_utuxg")
+
+[node name="HazzarArea" parent="." instance=ExtResource("2_f6vfj")]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HazzarArea"]
+polygon = PackedVector2Array(5, -6, 8, 0, 2, 0)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="HazzarArea"]
+position = Vector2(6, 0)
+polygon = PackedVector2Array(5, -6, 8, 0, 2, 0)
